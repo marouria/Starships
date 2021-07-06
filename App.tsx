@@ -8,8 +8,8 @@ import TermsScreen from './src/screens/TermsScreen';
 const App = () => {
   return (
     // <LoginScreen />
-    <TermsScreen />
-    // <FeedScreen />
+    // <TermsScreen />
+    <FeedScreen />
    );
 };
 

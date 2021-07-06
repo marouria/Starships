@@ -1,49 +1,15 @@
 import React from "react";
 import { StyleSheet } from "react-native";
-import { Button, Card, Title } from "react-native-paper";
+import { Button, Card, Text, Title, Colors, Badge } from "react-native-paper";
 
 export interface StarshipCardProps {
-  title: string;
+  name: string;
   manufacturer: string;
-  price: string;
+  cost_in_credits: string;
+  hyperdrive_rating: string;
 }
 
-const StarshipCard = ({ title, manufacturer, price }: StarshipCardProps) => {
-  const imageName = `${title.toLowerCase().replace(" ", "")}`;
-
-  let source;
-  switch (imageName) {
-    case "cr90corvette":
-      source = require("../../assets/starships/CR90corvette.jpg");
-      break;
-    case "stardestroyer":
-      source = require("../../assets/starships/stardestroyer.jpg");
-      break;
-    case "sentinel-classlanding craft":
-      source = require("../../assets/starships/sentinel-classlandingcraft.jpg");
-      break;
-    case "deathstar":
-      source = require("../../assets/starships/deathstar.jpg");
-      break;
-    case "millenniumfalcon":
-      source = require("../../assets/starships/millenniumfalcon.jpg");
-      break;
-    case "y-wing":
-      source = require("../../assets/starships/y-wing.jpg");
-      break;
-    case "x-wing":
-      source = require("../../assets/starships/x-wing.jpg");
-      break;
-    case "tieadvanced x1":
-      source = require("../../assets/starships/tieadvancedx1.jpg");
-      break;
-    case "executor":
-      source = require("../../assets/starships/executor.jpg");
-      break;
-    case "rebeltransport":
-      source = require("../../assets/starships/rebeltransport.jpg");
-      break;
-  }
+const StarshipCard = ({ name, manufacturer, cost_in_credits, hyperdrive_rating }: StarshipCardProps) => {
 
   const handlePress = () => {
     alert("Buy!");
@@ -51,16 +17,20 @@ const StarshipCard = ({ title, manufacturer, price }: StarshipCardProps) => {
 
   return (
     <Card style={styles.containerCard}>
-      <Card.Cover source={source} />
-      <Card.Title title={title} subtitle={manufacturer} />
+      <Card.Title
+      title={name}
+      subtitle={manufacturer}
+      right={(props) => <Badge style={styles.rating}>{hyperdrive_rating}</Badge>}
+      />
+      <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
       <Card.Content>
-        <Title>{price} credits</Title>
+        <Title style={styles.price}>{cost_in_credits} credits</Title>
       </Card.Content>
       <Card.Actions>
-        {price === "unknown" ? (
+        {cost_in_credits === "unknown" ? (
           <Button disabled>Not for sale</Button>
         ) : (
-          <Button onPress={handlePress}>Buy this spaceship</Button>
+            <Button icon="basket" mode="contained" onPress={handlePress}>Buy</Button>
         )}
       </Card.Actions>
     </Card>
@@ -70,6 +40,15 @@ const StarshipCard = ({ title, manufacturer, price }: StarshipCardProps) => {
 const styles = StyleSheet.create({
   containerCard: {
     marginBottom: 32,
+  },
+  rating: {
+    color: "white",
+    fontWeight: "bold",
+    marginRight: 10,
+    fontSize: 10,
+  },
+  price: {
+    textAlign: "center",
   },
 });
 
