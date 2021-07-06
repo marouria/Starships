@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Image, ScrollView, StatusBar } from "react-native";
+import { StyleSheet, View, Text, Image, ScrollView, StatusBar } from "react-native";
 import { Appbar } from "react-native-paper";
 
 // We need to use this props screen `{navigation}`
