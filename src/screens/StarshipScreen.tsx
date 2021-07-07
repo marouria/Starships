@@ -1,14 +1,9 @@
 import React from 'react'
-import { ViewBase, Text } from 'react-native'
-import { useStarships } from '../../hooks/useStarships'
+import { View, Text } from 'react-native'
+import UseStarships from '../../hooks/UseStarships'
 
 const StarshipScreen = () => {
-  const { error, isLoading, data } = useStarships()
-  if (isLoading) {
-    return (
-      <Text>Loading…</Text>;
-    )
-  }
+  const { error, isLoading} = UseStarships()
   return (
     <View>
       <Text>Hello</Text>
