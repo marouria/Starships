@@ -3,7 +3,7 @@ import { StyleSheet, TouchableOpacity, Text, View } from "react-native";
 import Constants from "expo-constants";
 import { Button, Colors, Headline, TextInput } from "react-native-paper";
 
-import { FormInput } from "../components/FromInput";
+import { FormInput } from "../components/FormInput";
 
 const LoginScreen = () => {
   const [email, setEmail] = useState("");

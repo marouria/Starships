@@ -2,9 +2,8 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { Card } from "react-native-paper";
 import { QueryClient, QueryClientProvider } from "react-query";
-import StorybookUIRoot from './storybook';
 
-import LoginScreen from "./src/screens/LoginScreen";
+import { LoginScreen } from "./src/screens/LoginScreen";
 import FeedScreen from "./src/screens/FeedScreen";
 import TermsScreen from "./src/screens/TermsScreen";
 import StarshipScreen from "./src/screens/StarshipScreen";
@@ -16,9 +15,9 @@ const App = () => {
     // <LoginScreen />
     // <TermsScreen />
     // <FeedScreen />
-    // <QueryClientProvider client={queryClient}>
-    //   <StarshipScreen />
-    // </QueryClientProvider>
+    <QueryClientProvider client={queryClient}>
+      <StarshipScreen />
+    </QueryClientProvider>
   );
 };
 
