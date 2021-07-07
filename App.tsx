@@ -1,11 +1,12 @@
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import LoginScreen from './src/screens/LoginScreen';
-import { Card } from 'react-native-paper';
-import FeedScreen from './src/screens/FeedScreen';
-import TermsScreen from './src/screens/TermsScreen';
-import StarshipScreen from './src/screens/StarshipScreen';
-import { QueryClient, QueryClientProvider } from 'react-query';
+import React from "react";
+import { View, Text, StyleSheet } from "react-native";
+import { Card } from "react-native-paper";
+import { QueryClient, QueryClientProvider } from "react-query";
+
+import LoginScreen from "./src/screens/LoginScreen";
+import FeedScreen from "./src/screens/FeedScreen";
+import TermsScreen from "./src/screens/TermsScreen";
+import StarshipScreen from "./src/screens/StarshipScreen";
 
 const queryClient = new QueryClient();
 
@@ -17,7 +18,7 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <StarshipScreen />
     </QueryClientProvider>
-   );
+  );
 };
 
 export default App;

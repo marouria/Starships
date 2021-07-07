@@ -1,9 +1,10 @@
-import React from 'react'
-import { View, Text } from 'react-native'
-import UseStarships from '../../hooks/UseStarships'
+import React from "react";
+import { View, Text } from "react-native";
+
+import UseStarships from "../../hooks/UseStarships";
 
 const StarshipScreen = () => {
-  const { error, isLoading} = UseStarships()
+  const { error, isLoading } = UseStarships();
   return (
     <View>
       <Text>Hello</Text>
@@ -12,7 +13,7 @@ const StarshipScreen = () => {
       <Text>Hello</Text>
       <Text>Hello</Text>
     </View>
-  )
-}
+  );
+};
 
-export default StarshipScreen
+export default StarshipScreen;

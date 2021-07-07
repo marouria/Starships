@@ -9,8 +9,12 @@ export interface StarshipCardProps {
   hyperdrive_rating: string;
 }
 
-const StarshipCard = ({ name, manufacturer, cost_in_credits, hyperdrive_rating }: StarshipCardProps) => {
-
+const StarshipCard = ({
+  name,
+  manufacturer,
+  cost_in_credits,
+  hyperdrive_rating,
+}: StarshipCardProps) => {
   const handlePress = () => {
     alert("Buy!");
   };
@@ -18,11 +22,13 @@ const StarshipCard = ({ name, manufacturer, cost_in_credits, hyperdrive_rating }
   return (
     <Card style={styles.containerCard}>
       <Card.Title
-      title={name}
-      subtitle={manufacturer}
-      right={(props) => <Badge style={styles.rating}>{hyperdrive_rating}</Badge>}
+        title={name}
+        subtitle={manufacturer}
+        right={(props) => (
+          <Badge style={styles.rating}>{hyperdrive_rating}</Badge>
+        )}
       />
-      <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
+      <Card.Cover source={{ uri: "https://picsum.photos/700" }} />
       <Card.Content>
         <Title style={styles.price}>{cost_in_credits} credits</Title>
       </Card.Content>
@@ -30,7 +36,9 @@ const StarshipCard = ({ name, manufacturer, cost_in_credits, hyperdrive_rating }
         {cost_in_credits === "unknown" ? (
           <Button disabled>Not for sale</Button>
         ) : (
-            <Button icon="basket" mode="contained" onPress={handlePress}>Buy</Button>
+          <Button icon="basket" mode="contained" onPress={handlePress}>
+            Buy
+          </Button>
         )}
       </Card.Actions>
     </Card>

@@ -4,13 +4,10 @@ import { Text } from "react-native-paper";
 const Header = (props) => {
   return (
     <View style={styles.container}>
-      <Text
-        style={styles.header}
-        {...props}
-      />
+      <Text style={styles.header} {...props} />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
