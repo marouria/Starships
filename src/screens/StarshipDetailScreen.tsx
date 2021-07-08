@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
 import {
   StyleSheet,
@@ -5,17 +6,26 @@ import {
   Text,
   View,
   ScrollView,
+  Button,
 } from "react-native";
+import { Appbar } from "react-native-paper";
+import AppLayout from "../components/AppLayout";
 
 const StarshipDetailScreen = () => {
-return (
-  <Text>Hello</Text>
-    <Text>Hello</Text>
-  <Text>Hello</Text>
-    <Text>Hello</Text>
-  <Text>Hello</Text>
-
-)
+  const navigation = useNavigation();
+  function goBack() {
+    navigation.goBack();
+  }
+  return (
+    <AppLayout title="Starship" withFooter>
+      <Button title="Go back" onPress={goBack} />
+      <Text>Hello</Text>
+      <Text>Hello</Text>
+      <Text>Hello</Text>
+      <Text>Hello</Text>
+      <Text>Hello</Text>
+    </AppLayout>
+  );
 };
 
-export StarshipDetailScreen
+export default StarshipDetailScreen;

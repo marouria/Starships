@@ -5,10 +5,12 @@ import { NavigationContainer } from "@react-navigation/native";
 import LoginScreen from "../screens/LoginScreen";
 import TermsScreen from "../screens/TermsScreen";
 import StarshipScreen from "../screens/StarshipScreen";
+import StarshipDetailScreen from "../screens/StarshipDetailScreen";
 
 import { AppRoutes } from "./AppRoutes";
 
 const Stack = createStackNavigator();
+const StarshipStack = createStackNavigator();
 
 function Navigator() {
   return (
@@ -23,6 +25,10 @@ function Navigator() {
         <Stack.Screen
           name={AppRoutes.STARSHIP_FEED_SCREEN}
           component={StarshipScreen}
+        />
+        <StarshipStack.Screen
+          name={AppRoutes.STARSHIP_DETAIL_SCREEN}
+          component={StarshipDetailScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>

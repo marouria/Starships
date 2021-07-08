@@ -10,7 +10,7 @@ const StarshipScreen = () => {
   const { isError, isLoading, data } = useStarships();
   const navigation = useNavigation();
   function handlePress() {
-    navigation.navigate(AppRoutes.TERMS_SCREEN);
+    navigation.navigate(AppRoutes.STARSHIP_DETAIL_SCREEN);
   }
 
   if (isLoading) {
