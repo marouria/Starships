@@ -7,10 +7,12 @@ export interface StarshipCardProps {
   manufacturer: string;
   cost_in_credits: string;
   hyperdrive_rating: string;
+  onPress?: (() => void) | undefined;
 }
 
 const StarshipCard = ({
   name,
+  onPress,
   manufacturer,
   cost_in_credits,
   hyperdrive_rating,
@@ -20,7 +22,7 @@ const StarshipCard = ({
   };
 
   return (
-    <Card style={styles.containerCard}>
+    <Card style={styles.containerCard} onPress={onPress}>
       <Card.Title
         title={name}
         subtitle={manufacturer}

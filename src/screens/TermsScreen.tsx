@@ -8,12 +8,14 @@ import {
   StatusBar,
 } from "react-native";
 import { Appbar } from "react-native-paper";
+import { useNavigation } from "@react-navigation/native";
 
 // We need to use this props screen `{navigation}`
 const TermsScreen = () => {
+  const navigation = useNavigation();
   function goBack() {
     // We need to use this props screen `{navigation}`
-    alert("goBack pressed!");
+    navigation.goBack();
   }
 
   return (

@@ -7,6 +7,7 @@ import { LoginScreen } from "./src/screens/LoginScreen";
 import FeedScreen from "./src/screens/FeedScreen";
 import TermsScreen from "./src/screens/TermsScreen";
 import StarshipScreen from "./src/screens/StarshipScreen";
+import Navigator from "./src/navigation/Navigator";
 
 const queryClient = new QueryClient();
 
@@ -15,9 +16,10 @@ const App = () => {
     // <LoginScreen />
     // <TermsScreen />
     // <FeedScreen />
-    <QueryClientProvider client={queryClient}>
-      <StarshipScreen />
-    </QueryClientProvider>
+    // <QueryClientProvider client={queryClient}>
+    //   <StarshipScreen />
+    // </QueryClientProvider>
+    <Navigator />
   );
 };
 

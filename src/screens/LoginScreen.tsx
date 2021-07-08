@@ -1,25 +1,39 @@
 import React, { useState } from "react";
-import { StyleSheet, TouchableOpacity, Text, View } from "react-native";
+import {
+  StyleSheet,
+  TouchableOpacity,
+  Text,
+  View,
+  ScrollView,
+} from "react-native";
 import Constants from "expo-constants";
 import { Button, Colors, Headline, TextInput } from "react-native-paper";
+import { useNavigation } from "@react-navigation/native";
 
 import { FormInput } from "../components/FormInput";
+import { AppRoutes } from "../navigation/AppRoutes";
+import AppLayout from "../components/AppLayout";
 
 const LoginScreen = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isVisble, setIsVisible] = useState(true);
+  const navigation = useNavigation();
 
-  function handleLogin() {}
+  function handleLogin() {
+    navigation.navigate(AppRoutes.STARSHIP_DETAIL_SCREEN);
+  }
 
-  function handleTerms() {}
+  function handleTerms() {
+    navigation.navigate(AppRoutes.TERMS_SCREEN);
+  }
 
   function toggleSecureIcon() {
     setIsVisible(!isVisble);
   }
 
   return (
-    <View>
+    <ScrollView>
       <View style={styles.header}>
         <Headline style={styles.headerText}>SpaceCraft</Headline>
       </View>
@@ -54,7 +68,7 @@ const LoginScreen = () => {
           </Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
