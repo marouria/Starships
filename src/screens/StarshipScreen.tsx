@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, ScrollView } from "react-native";
 import { useStarships } from "../../hooks/useStarships";
+import AppLayout from "../components/AppLayout";
 import StarshipCard from "../components/StarshipCard";
 
 const StarshipScreen = () => {
@@ -16,7 +17,7 @@ const StarshipScreen = () => {
   // console.log(data.results.map((starship) => (starship.model, starship.cost_in_credits)));
 
   return (
-    <View>
+    <AppLayout title="Starships" withFooter>
       {data.results.map((starship) => {
         return (
           <StarshipCard
@@ -27,7 +28,7 @@ const StarshipScreen = () => {
           />
         );
       })}
-    </View>
+    </AppLayout>
   );
 };
 
