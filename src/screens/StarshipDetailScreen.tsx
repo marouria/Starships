@@ -13,15 +13,17 @@ import { StarshipCard } from "../components";
 
 import AppLayout from "../components/AppLayout";
 
-const StarshipDetailScreen = () => {
+const StarshipDetailScreen = (props) => {
+  console.log(props);
   const navigation = useNavigation();
+  const { name } = props.route.params.starshipId;
 
   function goBack() {
     navigation.goBack();
   }
 
   return (
-    <AppLayout title="Starship" withFooter>
+    <AppLayout title={name} withFooter>
       <Button title="Go back" onPress={goBack} />
       <Text>Hello</Text>
       <Text>Hello</Text>

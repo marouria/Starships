@@ -1,6 +1,8 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { StyleSheet } from "react-native";
 import { Button, Card, Text, Title, Colors, Badge } from "react-native-paper";
+import { AppRoutes } from "../navigation/AppRoutes";
 
 export interface StarshipCardProps {
   name: string;
@@ -10,19 +12,18 @@ export interface StarshipCardProps {
   onPress?: (() => void) | undefined;
 }
 
-const StarshipCard = ({
-  name,
-  onPress,
-  manufacturer,
-  cost_in_credits,
-  hyperdrive_rating,
-}: StarshipCardProps) => {
-  const handlePress = () => {
-    alert("Buy!");
-  };
+const StarshipCard = ({ starship }: StarshipCardProps) => {
+  const { manufacturer, name, cost_in_credits, hyperdrive_rating } = starship;
+  const navigation = useNavigation();
+
+  function handlePress() {
+    navigation.navigate(AppRoutes.STARSHIP_DETAIL_SCREEN, {
+      starshipId: starship,
+    });
+  }
 
   return (
-    <Card style={styles.containerCard} onPress={onPress}>
+    <Card style={styles.containerCard} onPress={handlePress}>
       <Card.Title
         title={name}
         subtitle={manufacturer}
