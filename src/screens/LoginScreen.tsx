@@ -12,7 +12,6 @@ import { useNavigation } from "@react-navigation/native";
 
 import { FormInput } from "../components/FormInput";
 import { AppRoutes } from "../navigation/AppRoutes";
-import AppLayout from "../components/AppLayout";
 
 const LoginScreen = () => {
   const [email, setEmail] = useState("");
@@ -21,7 +20,7 @@ const LoginScreen = () => {
   const navigation = useNavigation();
 
   function handleLogin() {
-    navigation.navigate(AppRoutes.STARSHIP_DETAIL_SCREEN);
+    navigation.navigate(AppRoutes.STARSHIP_FEED_SCREEN);
   }
 
   function handleTerms() {

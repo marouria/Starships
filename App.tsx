@@ -16,10 +16,9 @@ const App = () => {
     // <LoginScreen />
     // <TermsScreen />
     // <FeedScreen />
-    // <QueryClientProvider client={queryClient}>
-    //   <StarshipScreen />
-    // </QueryClientProvider>
-    <Navigator />
+    <QueryClientProvider client={queryClient}>
+      <Navigator />
+    </QueryClientProvider>
   );
 };
 
