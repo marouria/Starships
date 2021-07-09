@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
 import { Colors, Headline } from "react-native-paper";
+import Header from "./Header";
 
 // Add a `NetworkProvider
 // import { NetworkProvider } from 'react-native-offline';
@@ -13,11 +14,14 @@ interface Props {
 
 const AppLayout = ({ title, children, withFooter = false }: Props) => {
   return (
-    <ScrollView style={styles.container}>
-      <Headline style={styles.headerText}>{title}</Headline>
-      {children}
-      {withFooter && <View style={styles.footer} />}
-    </ScrollView>
+    <View>
+      <Header />
+      <ScrollView style={styles.container}>
+        <Headline style={styles.headerText}>{title}</Headline>
+        {children}
+        {withFooter && <View style={styles.footer} />}
+      </ScrollView>
+    </View>
   );
 };
 

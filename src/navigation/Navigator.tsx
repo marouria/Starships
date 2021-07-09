@@ -30,10 +30,6 @@ function Navigator() {
           name={AppRoutes.STARSHIP_DETAIL_SCREEN}
           component={StarshipDetailScreen}
         />
-        <StarshipStack.Screen
-          name={AppRoutes.PILOT_SCREEN}
-          component={PilotScreen}
-        />
       </Stack.Navigator>
     </NavigationContainer>
   );
