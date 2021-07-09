@@ -11,7 +11,8 @@ import {
 
 import AppLayout from "../components/AppLayout";
 
-const PilotsScreen = () => {
+const PilotsScreen = (props) => {
+  console.log(props);
   return (
     <AppLayout title="James" withFooter>
       <Text>Hello</Text>
